@@ -4,8 +4,8 @@ import * as ReactDOM from 'react-dom/client';
 //import the components that we will be routing to
 import App from './components/App.jsx';
 import Home from './components/Home.jsx';
-import Trip from './components/Trip.jsx';
-import PastTrips from './components/PastTrips.jsx';
+// import Trip from './components/Trip.jsx';
+// import PastTrips from './components/PastTrips.jsx';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -25,14 +25,14 @@ const router = createBrowserRouter([
     path: '/home',
     element: <Home />,
   },
-  {
-    path: '/trip',
-    element: <Trip />,
-  },
-  {
-    path: '/pastTrips',
-    element: <PastTrips />,
-  },
+  // {
+  //   path: '/trip',
+  //   element: <Trip />,
+  // },
+  // {
+  //   path: '/pastTrips',
+  //   element: <PastTrips />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
