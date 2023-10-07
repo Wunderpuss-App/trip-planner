@@ -6,7 +6,7 @@ module.exports = {
   entry: './client/index.js',
   output: {
     filename: 'bundle.js',
-    path: '/trip-planner/build',
+    path: '/home/gabyspg/trip-planner/build',
     publicPath: '/',
   },
   module: {

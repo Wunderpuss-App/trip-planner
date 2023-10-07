@@ -1,12 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Home from './Home.jsx'
+import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Link,
+  useNavigate,
+} from 'react-router-dom';
 
 const App = () => {
-  const navigate = useNavigate();
-
-  return (
-    <Home />
-  );
+  return <div>hi</div>;
 };
 export default App;
