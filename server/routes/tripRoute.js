@@ -1,12 +1,12 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const tripController = require("../controllers/tripController");
+const tripController = require('../controllers/tripController');
 
 // city lookup
 // router.post("/search", tripController.createTrip);
 
 // new trip search
-router.get("/trip", tripController.getNewTrip, (req, res) => {
+router.get('/search/:destination', tripController.getNewTrip, (req, res) => {
   return res.status(200).json(res.locals.trip);
 });
 

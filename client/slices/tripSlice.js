@@ -14,10 +14,7 @@ export const tripSlice = createSlice({
   initialState,
   reducers: {
     updateTrip: (state, action) => {
-      const { destination, weather, _id } = action.payload;
-      state.tripInfo.destination = destination;
-      state.tripInfo.weather = weather;
-      state._id = _id;
+      state.tripInfo = action.payload;
       // const clothing = chooseClothing(weather);
       // state.tripInfo.clothing = clothing;
     },

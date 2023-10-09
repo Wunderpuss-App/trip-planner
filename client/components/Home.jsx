@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import NavBar from './Home Components/NavBar.jsx';
 import fetch from 'isomorphic-fetch';
+import { updateTrip } from '../slices/tripSlice.js';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -24,9 +25,10 @@ const Home = () => {
       headers: { 'Content-type': 'application/json' },
     };
 
-    fetch('/api/search', getTripInfoRequest)
-      .then((data) => data.json)
+    fetch(`/api/search/${destination}`, getTripInfoRequest)
+      .then((res) => res.json())
       .then((data) => {
+        console.log('data from fetch', data);
         dispatch(updateTrip(data));
         navigate('/trip');
         return;
