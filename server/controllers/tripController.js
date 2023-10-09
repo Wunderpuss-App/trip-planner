@@ -34,7 +34,7 @@ async function fetchWeatherData(locationId) {
 exports.getNewTrip = async (req, res, next) => {
   try {
     console.log("inside getNewTrip middleware...");
-    const { destination } = req.body;
+    const { destination } = req.params;
     console.log("destination:", destination);
     const id = await fetchCityData(destination);
     console.log("city data fetched");
