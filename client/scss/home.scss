@@ -1,0 +1,19 @@
+.homeBackground {
+  background-image: url('../assets/vacation_image.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.searchBar {
+  display: flex;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    border-radius: 20px;
+    height: 45px;
+    width: 400px;
+    text-align: center;
+  }
+}

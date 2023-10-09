@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { startTransition } from 'react';
 
 const initialState = {
   tripInfo: {
@@ -15,12 +14,12 @@ export const tripSlice = createSlice({
   initialState,
   reducers: {
     updateTrip: (state, action) => {
-      const { destination, weather } = action.payload;
+      const { destination, weather, _id } = action.payload;
       state.tripInfo.destination = destination;
       state.tripInfo.weather = weather;
-
-      const clothing = chooseClothing(weather);
-      state.tripInfo.clothing = clothing;
+      state._id = _id;
+      // const clothing = chooseClothing(weather);
+      // state.tripInfo.clothing = clothing;
     },
     resetTrip: (state, action) => {
       state.tripInfo = {
