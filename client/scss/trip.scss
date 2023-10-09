@@ -1,0 +1,55 @@
+nav {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  height: 5%;
+}
+svg {
+  height: 60%;
+  width: 60%;
+}
+#searchBtn {
+  color: blue;
+  background-color: white;
+  border-radius: 0px 20px 20px 0px;
+  width: 20%;
+  border-color: gray;
+}
+form {
+  display: flex;
+  background-color: white;
+}
+input {
+  border-radius: 20px 0px 0px 20px;
+  font-size: 1.4rem;
+  border-color: gray;
+}
+#container {
+  display: flex;
+  align-items: center;
+}
+.weatherPanel {
+  background-color: rgba(0, 0, 255, 0.252);
+  width: 80%;
+}
+#clothing {
+  background-color: gray;
+  width: 20%;
+  height: 100%;
+  display: block;
+}
+.saveBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+}
+.weatherFrame {
+  height: 10rem;
+  margin: 1%;
+  border-radius: 20px 0px 0px 20px;
+  padding-left: 1%;
+  padding-top: 1%;
+}
