@@ -1,10 +1,64 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// const initialState = {
+//   tripInfo: {
+//     _id: '',
+//     destination: '',
+//     weather: [],
+//     // clothing: [],
+//   },
+// };
+
 const initialState = {
   tripInfo: {
-    _id: '',
-    destination: '',
-    weather: [],
+    _id: '123',
+    destination: 'Spain',
+    weather: [
+      {
+        fxDate: "2023-10-09",
+        sunrise: "07:00",
+        sunset: "18:35",
+        tempMax: "11",
+        tempMin: "4",
+        textDay: "Partly Cloudy",
+        textNight: "Shower Rain",
+        windDirDay: "SSW",
+        windSpeedDay: "24",
+        humidity: "70",
+        precip: "0.0",
+        uvIndex: "2"
+      },
+      {
+        dayOfWeek: 'Monday',
+        temp: 75,
+        UV: 6,
+        humidity: 69,
+      },
+      {
+        dayOfWeek: 'Tuesday',
+        temp: 75,
+        UV: 6,
+        humidity: 69,
+      },
+      {
+        dayOfWeek: 'Wednesday',
+        temp: 75,
+        UV: 6,
+        humidity: 69,
+      },
+      {
+        dayOfWeek: 'Thursday',
+        temp: 75,
+        UV: 6,
+        humidity: 69,
+      },
+      {
+        dayOfWeek: 'Friday',
+        temp: 75,
+        UV: 6,
+        humidity: 69,
+      },
+    ]
     // clothing: [],
   },
 };

@@ -5,8 +5,12 @@ $primaryBlack: rgb(28, 27, 27);
 $secondaryBlack: rgb(86, 85, 85);
 
 .pastTrip {
+  background-image: url(https://media.cntraveler.com/photos/62e2b452af14e65bfedc7cb6/16:9/w_2560%2Cc_limit/AirPlane_philip-myrtorp-iiqpxCg2GD4-unsplash.jpg);
+  background-size: 150%;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
   background-color: $lightPrimaryColor;
-  // background-color: white;
   height: 100%;
 
   h2 {

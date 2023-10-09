@@ -36,23 +36,23 @@ export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1, padding: 2 }}>
       <AppBar
-        position="static"
+        position='static'
         sx={{ backgroundColor: '#26a69a', color: '#212121' }}
       >
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', ml: 3 }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color='inherit'
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -71,7 +71,7 @@ export default function NavBar() {
                   key={page}
                   onClick={() => handleMenuItemClicked(index)}
                 >
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign='center'>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -88,7 +88,7 @@ export default function NavBar() {
           >
             <LocalAirportIcon sx={{ mr: 2 }} />
             <Typography
-              variant="h6"
+              variant='h6'
               noWrap
               sx={{
                 fontFamily: 'monospace',
