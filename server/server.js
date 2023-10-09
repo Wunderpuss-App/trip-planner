@@ -10,7 +10,7 @@ app.use(cors());
 // require route here
 const tripRouter = require("./routes/tripRoute");
 // define middleware
-app.use("/trip", tripRouter);
+app.use("/api", tripRouter);
 
 //mongodb setup. Password: 111
 const mongoose = require("mongoose");

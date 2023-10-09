@@ -6,7 +6,7 @@ const tripController = require("../controllers/tripController");
 router.post("/search", tripController.newTrip);
 
 // Get a past trip
-router.get("/:ID", tripController.pastTrip);
+router.get("/trip/:ID", tripController.pastTrip);
 
 // Update a trip
 router.put("/:ID", tripController.updateTrip);
