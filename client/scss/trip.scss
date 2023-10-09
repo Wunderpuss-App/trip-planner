@@ -1,5 +1,5 @@
 #body {
-  background-image: url(https://images.unsplash.com/photo-1536532184021-da5392b55da1);
+  background-image: url('../assets/weather.jpg');
   background-size: 150%;
   background-position: -400px;
   height: 100vh;
@@ -37,6 +37,7 @@
   border: 1px solid black;
   border-radius: 20px;
   margin: 0.5%;
+  margin-right: 0.5%;
   height: 8%;
   box-shadow: 2px 2px 6px black;
   background-color: rgba(255, 255, 255, 0.771);
@@ -86,6 +87,7 @@ h5 {
 #precipSVG {
   height: 25px;
   width: 40px;
+  margin-left: 5px;
 }
 #precipSVG {
   color: rgba(0, 0, 255, 0.77);
