@@ -6,7 +6,11 @@ import { useDispatch } from 'react-redux';
 const Search = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
   const [destination, setDestination] = useState('');
+
+  
   const handleChange = (e) => {
     const newDestination = e.target.value;
     setDestination(newDestination);
