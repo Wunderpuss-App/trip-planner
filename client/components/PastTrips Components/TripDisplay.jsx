@@ -7,16 +7,24 @@ const TripDisplay = (props) => {
   return (
     <div className="trip">
       <div className="trip-header">
-        <h3>{destination}</h3>
+        <h3>{destination.toUpperCase()}</h3>
       </div>
       <hr className="line"></hr>
-      <p className="tripInfo">Dates: </p>
-      <button className="review" onClick={(event) => reviewTrip(event, trip)}>
-        Review Trip
-      </button>
-      <button className="delete" onClick={(event) => deleteTrip(event, _id)}>
-        Delete Trip
-      </button>
+      <div className="buttonsReview">
+        {/* <p className="tripInfo">Dates: </p> */}
+        <button
+          className="reviewBtn"
+          onClick={(event) => reviewTrip(event, trip)}
+        >
+          Review Trip
+        </button>
+        <button
+          className="deleteBtn"
+          onClick={(event) => deleteTrip(event, _id)}
+        >
+          Delete Trip
+        </button>
+      </div>
     </div>
   );
 };

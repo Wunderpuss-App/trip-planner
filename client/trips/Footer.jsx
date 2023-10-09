@@ -6,15 +6,17 @@ const Footer = (props) => {
   return (
     <div id="footer">
       {'_id' in trip ? (
-        <button className="submit" onClick={(event) => deleteTrip(event, _id)}>
+        <button
+          className="submit"
+          onClick={(event) => deleteTrip(event, trip._id)}
+        >
           Delete Trip
         </button>
       ) : (
-        <></>
+        <button className="submit" onClick={(event) => saveTrip(event, trip)}>
+          Save Trip
+        </button>
       )}
-      <button className="submit" onClick={(event) => saveTrip(event, trip)}>
-        Save Trip
-      </button>
     </div>
   );
 };

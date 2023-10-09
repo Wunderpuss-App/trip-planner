@@ -1,16 +1,18 @@
-$primaryColor: #26a69a;
-$secondaryColor: #83c3f7;
-$lightPrimaryColor: lighten($primaryColor, 58%);
-$primaryBlack: rgb(28, 27, 27);
-$secondaryBlack: rgb(86, 85, 85);
-
+// $primaryColor: #26a69a;
+// $secondaryColor: #83c3f7;
+// $lightPrimaryColor: lighten($primaryColor, 58%);
+// $primaryBlack: rgb(28, 27, 27);
+// $secondaryBlack: rgb(86, 85, 85);
+body {
+    font-family: 'Roboto', sans-serif;
+}
 .pastTrip {
   background-image: url('../assets/pastTrips.jpg');
   background-size: 150%;
   width: 100vw;
   height: 100vh;
   background-position: center;
-  background-color: $lightPrimaryColor;
+  background-color: rgba(0, 0, 0, 0.137);
   height: 100%;
 
   h2 {
@@ -22,7 +24,7 @@ $secondaryBlack: rgb(86, 85, 85);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-content: center;
   gap: 20px;
   padding: 20px;
 }
@@ -36,10 +38,11 @@ $secondaryBlack: rgb(86, 85, 85);
 .trip {
   width: 300px;
   margin: 20px;
-  border: 1px solid #d2d8f6;
-  background-color: $secondaryColor;
+  border: 2px solid #00000099;
+  background-color: rgba(174, 174, 174, 0.834);
   padding: 20px;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
 
   .trip-header {
     text-align: center;
@@ -54,14 +57,21 @@ $secondaryBlack: rgb(86, 85, 85);
     border-top: 1px solid black;
     margin: 10px 0;
   }
+  .buttonsReview {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
-button {
+.reviewBtn,
+.deleteBtn {
   width: 100px;
   font-size: 1em;
   margin: 10px;
-  background-color: $lightPrimaryColor;
-  color: $primaryBlack;
-  border: 1px solid $secondaryBlack;
-  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.333);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px black;
 }

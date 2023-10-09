@@ -103,7 +103,9 @@ h5 {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.544);
   border-radius: 20px;
-  width: 10%;
+  width: auto;
+  padding-left: 1%;
+  padding-right: 1%;
   height: 2%;
   margin-top: 0;
   margin-bottom: 0;
@@ -123,7 +125,9 @@ h5 {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  width: 15%;
+  width: auto;
+  padding-left: .5%;
+  padding-right: .5%;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.429);
   border-color: black;

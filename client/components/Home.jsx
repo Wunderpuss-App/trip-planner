@@ -50,6 +50,7 @@ const Home = () => {
       <NavBar />
       <div className="searchBar">
         <input
+          autoComplete="off"
           name="search"
           type="string"
           value={destination}
@@ -58,12 +59,16 @@ const Home = () => {
         />
         <IconButton
           aria-label="search"
-          id='homeSearch'
+          id="homeSearch"
           onClick={(event) => {
             return searchClick(event);
           }}
         >
-          <SearchIcon id='searchIcon' fontSize="large" sx={{ color: 'white' }} />
+          <SearchIcon
+            id="searchIcon"
+            fontSize="large"
+            sx={{ color: 'white' }}
+          />
         </IconButton>
       </div>
     </div>
