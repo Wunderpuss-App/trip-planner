@@ -1,15 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 import Container from '../trips/Container.jsx';
 import Nav from '../trips/Nav.jsx';
 // import NavBar from './Home Components/NavBar.jsx'
 import Footer from '../trips/Footer.jsx';
+import { updateTrip } from '../slices/tripSlice.js';
 
 const Trip = () => {
+  const dispatch = useDispatch();
+
   const trip = useSelector((state) => state.trip.tripInfo);
-  const { _id, destination, weather } = trip;
+  const { destination, weather } = trip;
 
   const deleteTrip = (event, _id) => {
     event.preventDefault();
@@ -46,6 +47,7 @@ const Trip = () => {
     fetch(`/api/trip`, saveTripRequest)
       .then((res) => res.json())
       .then((data) => {
+        dispatch(updateTrip(data));
         alert('Trip has been saved.');
         return;
       })
@@ -57,10 +59,10 @@ const Trip = () => {
   };
 
   return (
-    <div id='body'>
+    <div id="body">
       <Nav />
-      <div id='destinationTag'>
-        <h4 id='destH5'>{destination.toUpperCase()}</h4>
+      <div id="destinationTag">
+        <h4 id="destH5">{destination.toUpperCase()}</h4>
       </div>
       <Container weather={weather} />
       <Footer deleteTrip={deleteTrip} saveTrip={saveTrip} trip={trip} />

@@ -58,11 +58,12 @@ const Home = () => {
         />
         <IconButton
           aria-label="search"
+          id='homeSearch'
           onClick={(event) => {
             return searchClick(event);
           }}
         >
-          <SearchIcon fontSize="large" sx={{ color: 'white' }} />
+          <SearchIcon id='searchIcon' fontSize="large" sx={{ color: 'white' }} />
         </IconButton>
       </div>
     </div>

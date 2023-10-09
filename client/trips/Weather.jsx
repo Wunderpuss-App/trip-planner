@@ -30,7 +30,7 @@ const Weather = (props) => {
         <span className='weatherSpan'>
           <h5 className='dayOfWeek'>{dayDisplay}</h5>
           <h5 className='tempDisplay'>
-            {(tempMin * 9) / 5 + 32}{' '}
+            {((tempMin * 9) / 5 + 32).toFixed(0)}°F
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -45,7 +45,7 @@ const Weather = (props) => {
             </svg>
           </h5>
           <h5 className='tempDisplay'>
-            {(tempMax * 9) / 5 + 32}{' '}
+            {((tempMax * 9) / 5 + 32).toFixed(0)}°F
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
