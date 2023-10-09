@@ -13,13 +13,22 @@ router.get("/search/:destination", tripController.getNewTrip, (req, res) => {
   return res.status(200).json(res.locals.trip);
 });
 
-// // Get a past trip
-// router.get("/trip/:ID", tripController.pastTrip);
+// Get past trip
+router.get("/trip/:id", tripController.pastTrip, (req, res) => {
+  return res.status(200).json(res.locals.pastTrip);
+});
+
+// Get past trips
+router.get("/trip", tripController.pastTrips, (req, res) => {
+  return res.status(200).json(res.locals.pastTrips);
+});
 
 // // Update a trip
 // router.put("/trip/:ID", tripController.updateTrip);
 
-// // Delete a trip
-// router.delete("/trip/:ID", tripController.deleteTrip);
+// Delete a trip
+router.delete("/trip/:id", tripController.deleteTrip, (req, res) => {
+  return res.status(200).json(res.locals.deletedTrip);
+});
 
 module.exports = router;
