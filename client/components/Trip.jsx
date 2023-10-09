@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Container from '../trips/Container.jsx';
-import Nav from '../trips/Nav.jsx';
+import Container from './Trip Components/Container.jsx';
+import Nav from './Trip Components/Nav.jsx';
 // import NavBar from './Home Components/NavBar.jsx'
-import Footer from '../trips/Footer.jsx';
+import Footer from './Trip Components/Footer.jsx';
 import { updateTrip } from '../slices/tripSlice.js';
 import { useNavigate } from 'react-router-dom';
 
