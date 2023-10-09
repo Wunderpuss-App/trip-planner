@@ -10,7 +10,7 @@ async function fetchCityData(cityName) {
   const data = await response.json();
 
   // return the id of the city that is the first result in the response object
-  return data.location[0].id;
+  return data.location[0];
 }
 
 //fetch data from Weather API
@@ -36,10 +36,11 @@ exports.getNewTrip = async (req, res, next) => {
     console.log("inside getNewTrip middleware...");
     const { destination } = req.params;
     console.log("destination:", destination);
-    const id = await fetchCityData(destination);
+    const cityData = await fetchCityData(destination);
     console.log("city data fetched");
-    console.log("city id:", id);
-    const weather = await fetchWeatherData(id);
+    console.log("city data:", cityData);
+    console.log("city id:", cityData.id);
+    const weather = await fetchWeatherData(cityData.id);
     console.log("weather data fetched");
     console.log("weather:", weather);
 
@@ -47,6 +48,7 @@ exports.getNewTrip = async (req, res, next) => {
     const trip = {
       destination: destination,
       weather: weather,
+      cityData: cityData,
     };
 
     res.locals.trip = trip;
@@ -56,44 +58,29 @@ exports.getNewTrip = async (req, res, next) => {
     next(err);
   }
 };
+// Creating new trip and saving in database
+exports.createTrip = async (req, res, next) => {
+  try {
+    console.log("inside create trip middleware function...");
+    const { destination, weather } = req.body;
 
-// Create a new trip
-// exports.createTrip = async (req, res) => {
-//   try {
-//     const { destination } = req.body;
+    console.log("destination: ", destination);
+    console.log("weather: ", weather);
 
-//     // Fetch city data
-//     fetchCityData(destination, (cityError, cityData) => {
-//       if (cityError) {
-//         return res.status(404).json({ error: "City not found" });
-//       }
+    const newTrip = await Trip.create({
+      destination: destination,
+      weather: weather,
+      // cityInfo: cityData,
+    });
 
-//       // Fetch weather data
-//       fetchWeatherData(cityData.id, (weatherError, weatherData) => {
-//         if (weatherError) {
-//           return res.status(500).json({ error: "Error fetching weather data" });
-//         }
+    console.log("new trip response from mongodb", newTrip);
 
-//         // Create a new trip with fetched data
-//         const trip = new Trip({
-//           destination,
-//           locationId: cityData.id,
-//           weather: weatherData,
-//           cityInfo: cityData,
-//         });
+    res.locals.savedTrip = newTrip;
 
-//         trip.save((saveError, savedTrip) => {
-//           if (saveError) {
-//             return res.status(500).json({ error: "Error saving trip" });
-//           }
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+};
 
-//           res.status(201).json(savedTrip);
-//         });
-//       });
-//     });
-//   } catch (error) {
-//     res
-//       .status(500)
-//       .json({ error: "An error occurred while creating the trip." });
-//   }
-// };
+//

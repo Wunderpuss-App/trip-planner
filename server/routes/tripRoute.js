@@ -1,12 +1,15 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const tripController = require('../controllers/tripController');
+const tripController = require("../controllers/tripController");
 
-// city lookup
-// router.post("/search", tripController.createTrip);
+// save trip to database
+router.post("/trip", tripController.createTrip, (req, res) => {
+  console.log("sending response back to client from GET /trip request");
+  return res.status(200).json(res.locals.savedTrip);
+});
 
 // new trip search
-router.get('/search/:destination', tripController.getNewTrip, (req, res) => {
+router.get("/search/:destination", tripController.getNewTrip, (req, res) => {
   return res.status(200).json(res.locals.trip);
 });
 

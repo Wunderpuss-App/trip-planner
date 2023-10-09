@@ -32,15 +32,9 @@ const subWeatherSchema = new mongoose.Schema({
 
 const tripSchema = new mongoose.Schema({
   destination: String,
-  locationId: String, // the ID Geo API sends back, used to get weather
-  weather: {
-    code: String,
-    updateTime: Date,
-    fxLink: String,
-    // Do we repeat daily object 7 times?
-    daily: [subWeatherSchema],
-  },
-  cityInfo: {
+  // locationId: String, // the ID Geo API sends back, used to get weather
+  weather: [subWeatherSchema],
+  cityData: {
     name: String,
     id: String,
     lat: String,
@@ -54,10 +48,6 @@ const tripSchema = new mongoose.Schema({
     type: String,
     rank: String,
     fxLink: String,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
   },
 });
 
