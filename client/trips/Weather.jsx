@@ -8,7 +8,7 @@ const Weather = () => {
 
   return (
     <>
-      <div className='weatherPanel'>Weekly Forecast: {weatherBlock}</div>
+      <div className='weatherPanel'>{weatherBlock}</div>
     </>
   );
 };

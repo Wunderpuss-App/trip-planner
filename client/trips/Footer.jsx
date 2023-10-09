@@ -3,11 +3,11 @@ import React from 'react';
 const Footer = () => {
   return (
     <div id='footer'>
-      <button formMethod='DELETE' type='submit'>
+      <button className='footerBtn' formMethod='DELETE' type='submit'>
         {' '}
         DELETE
       </button>
-      <button formMethod='PATCH' type='submit'>
+      <button className='footerBtn' formMethod='PATCH' type='submit'>
         {' '}
         UPDATE
       </button>

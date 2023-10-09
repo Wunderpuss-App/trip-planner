@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import Container from '../trips/Container.jsx';
 import Nav from '../trips/Nav.jsx';
 import Footer from '../trips/Footer.jsx';
@@ -8,6 +9,8 @@ import Footer from '../trips/Footer.jsx';
 const Trip = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [destination, setDestination] = useState('');
 
   const handleChange = (e) => {
     const newDestination = e.target.value;

@@ -1,10 +1,53 @@
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const Search = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [destination, setDestination] = useState('');
+  const handleChange = (e) => {
+    const newDestination = e.target.value;
+    setDestination(newDestination);
+  };
+
+  const getTripInfo = (destination) => {
+    const getTripInfoRequest = {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: { 'Content-type': 'application/json' },
+    };
+
+    fetch('/search', getTripInfoRequest)
+      .then((data) => data.json)
+      .then((data) => {
+        dispatch(updateTrip(data));
+        navigate('/trip');
+        return;
+      })
+      .catch((error) => {
+        alert('Unable to get destination.');
+        console.log(`Error! -> ${error}`);
+        return;
+      });
+  };
   return (
     <form action='get'>
-      <input type='text' name='search' placeholder='Search' id='' />
-      <button id='searchBtn'>
+      <input
+        type='string'
+        name='search'
+        value={destination}
+        placeholder='Search new destination'
+        onChange={(e) => handleDestinationChange(e)}
+      />
+      <button
+        id='searchBtn'
+        aria-label='search'
+        onClick={(e) => {
+          return searchClick(e);
+        }}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           x='0px'
