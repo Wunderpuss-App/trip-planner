@@ -25,12 +25,6 @@ async function fetchWeatherData(locationId) {
   return data.daily;
 }
 
-// async function testFunc() {
-//   const id = await fetchCityData("maryland");
-//   const response = await fetchWeatherData(id);
-//   console.log("response in testFunc :", response);
-// }
-
 exports.getNewTrip = async (req, res, next) => {
   try {
     console.log("inside getNewTrip middleware...");
@@ -83,4 +77,39 @@ exports.createTrip = async (req, res, next) => {
   }
 };
 
-//
+// get one past trip
+exports.pastTrip = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const pastTrip = await Trip.findOne({
+      _id: id,
+    });
+    res.locals.pastTrip = pastTrip;
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// get all past trips
+exports.pastTrips = async (req, res, next) => {
+  try {
+    const pastTrips = await Trip.find();
+    res.locals.pastTrips = pastTrips;
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// delete trip by id
+exports.deleteTrip = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const deletedTrip = await Trip.findByIdAndDelete(id);
+    res.locals.deletedTrip = deletedTrip;
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+};
