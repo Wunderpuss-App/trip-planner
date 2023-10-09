@@ -4,6 +4,7 @@
   background-position: -400px;
   height: 100vh;
   width: 100vw;
+  font-family: 'Roboto', sans-serif;
 }
 
 #container {
@@ -12,9 +13,9 @@
   margin-left: 0;
   padding-left: 0;
 }
-.weatherPanel {
-  width: 100%;
-}
+// .weatherPanel {
+//   width: 100%;
+// }
 #clothing {
   background-color: gray;
   width: 20%;
@@ -27,7 +28,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 10%;
+  height: 8%;
 }
 
 .weatherSpan {
@@ -35,38 +36,105 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 20px;
-  margin: 1%;
-  height: 10%;
+  margin: 0.5%;
+  height: 8%;
   box-shadow: 2px 2px 6px black;
-  background-color: rgba(255, 255, 255, 0.553);
+  background-color: rgba(255, 255, 255, 0.771);
+  width: 98%;
 }
 h5 {
-  border-right: 1px solid black;
+  border-right: 2px solid rgba(0, 0, 0, 0.282);
   height: 100%;
   align-items: center;
   display: flex;
   margin: 0;
 }
 .dayOfWeek {
-  width: 20%;
+  width: 14%;
   display: flex;
   font-size: 180%;
   align-items: center;
-  padding-left: 2%;
+  padding-left: 1%;
 }
 .tempDisplay {
   width: 10%;
   display: flex;
   justify-content: center;
 }
+.windSpeed {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
 .UVIndex {
-  width: 10%;
+  width: 5%;
   display: flex;
   justify-content: center;
 }
 .humidity {
-  width: 10%;
+  width: 6%;
   display: flex;
   justify-content: center;
   border: none;
+}
+#sunSVG {
+  height: 30px;
+  width: 50px;
+  color: rgb(212, 184, 29);
+}
+#tempSVG,
+#precipSVG {
+  height: 25px;
+  width: 40px;
+}
+#precipSVG {
+  color: rgba(0, 0, 255, 0.77);
+}
+#destinationTag {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 1%;
+}
+#destH5 {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.544);
+  border-radius: 20px;
+  width: 10%;
+  height: 2%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -0.5%;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 10px black;
+  border: 1px solid black;
+}
+#weatherTitle {
+  height: 4.5%;
+  background-color: rgba(255, 255, 255, 0.503);
+  margin-left: 0.5%;
+  font-style: italic;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 15%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.429);
+  border-color: black;
+  box-shadow: 2px 2px 8px black;
+}
+.submit:hover {
+  background-color: rgba(255, 255, 255, 0.645);
+  box-shadow: 5px 5px 10px black;
+  border-color: rgba(255, 255, 255, 0.144);
+}
+.sunDisplay {
+  width: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

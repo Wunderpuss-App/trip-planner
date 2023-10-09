@@ -8,8 +8,8 @@ import Nav from '../trips/Nav.jsx';
 import Footer from '../trips/Footer.jsx';
 
 const Trip = () => {
-  const trip = useSelector(state => state.trip.tripInfo);
-  const { _id, destination, weather } = trip; 
+  const trip = useSelector((state) => state.trip.tripInfo);
+  const { _id, destination, weather } = trip;
 
   const deleteTrip = (event, _id) => {
     event.preventDefault();
@@ -23,35 +23,47 @@ const Trip = () => {
       .then((res) => res.json())
       .then((data) => {
         alert('Trip has been deleted.');
-        Navigate('/pastTrips')
+        Navigate('/pastTrips');
         return;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert('Unable to delete trip');
+        console.log(err);
+        return;
+      });
   };
 
   const saveTrip = (event, trip) => {
     event.preventDefault();
+    const jsonTrip = JSON.stringify(trip);
     const saveTripRequest = {
       method: 'POST',
       credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json' },
-      body: {trip: trip}
+      body: jsonTrip,
     };
 
-    fetch(`/api/trip/`, saveTripRequest)
+    fetch(`/api/trip`, saveTripRequest)
       .then((res) => res.json())
       .then((data) => {
         alert('Trip has been saved.');
         return;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert('Unable to save trip');
+        console.log(err);
+        return;
+      });
   };
-  
+
   return (
     <div id='body'>
       <Nav />
+      <div id='destinationTag'>
+        <h4 id='destH5'>{destination.toUpperCase()}</h4>
+      </div>
       <Container weather={weather} />
-      <Footer deleteTrip={deleteTrip} saveTrip={saveTrip} trip={trip}  />
+      <Footer deleteTrip={deleteTrip} saveTrip={saveTrip} trip={trip} />
     </div>
   );
 };
