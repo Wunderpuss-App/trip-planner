@@ -3,15 +3,20 @@ const router = express.Router();
 const tripController = require("../controllers/tripController");
 
 // city lookup
-router.post("/search", tripController.newTrip);
+// router.post("/search", tripController.createTrip);
 
-// Get a past trip
-router.get("/trip/:ID", tripController.pastTrip);
+// new trip search
+router.get("/trip", tripController.getNewTrip, (req, res) => {
+  return res.status(200).json(res.locals.trip);
+});
 
-// Update a trip
-router.put("/:ID", tripController.updateTrip);
+// // Get a past trip
+// router.get("/trip/:ID", tripController.pastTrip);
 
-// Delete a trip
-router.delete("/:ID", tripController.deleteTrip);
+// // Update a trip
+// router.put("/trip/:ID", tripController.updateTrip);
+
+// // Delete a trip
+// router.delete("/trip/:ID", tripController.deleteTrip);
 
 module.exports = router;
