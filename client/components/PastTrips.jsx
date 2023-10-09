@@ -10,28 +10,7 @@ const PastTrips = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [trips, setTrips] = useState([
-    {
-      _id: '123',
-      destination: 'spain',
-      weather: ['hot'],
-    },
-    {
-      _id: '123',
-      destination: 'spain',
-      weather: ['hot'],
-    },
-    {
-      _id: '123',
-      destination: 'spain',
-      weather: ['hot'],
-    },
-    {
-      _id: '123',
-      destination: 'spain',
-      weather: ['hot'],
-    },
-  ]);
+  const [trips, setTrips] = useState([]);
 
   const getAllTripsRequest = () => {
     const getTripsRequest = {

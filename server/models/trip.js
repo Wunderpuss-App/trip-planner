@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const subWeatherSchema = new mongoose.Schema({
-  fxDate: Date,
+  fxDate: String,
   sunrise: String,
   sunset: String,
   moonrise: String,
@@ -51,4 +51,4 @@ const tripSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Trip", tripSchema);
+module.exports = mongoose.model('Trip', tripSchema);

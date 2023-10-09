@@ -5,9 +5,11 @@ import Nav from '../trips/Nav.jsx';
 // import NavBar from './Home Components/NavBar.jsx'
 import Footer from '../trips/Footer.jsx';
 import { updateTrip } from '../slices/tripSlice.js';
+import { useNavigate } from 'react-router-dom';
 
 const Trip = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const trip = useSelector((state) => state.trip.tripInfo);
   const { destination, weather } = trip;
@@ -24,7 +26,7 @@ const Trip = () => {
       .then((res) => res.json())
       .then((data) => {
         alert('Trip has been deleted.');
-        Navigate('/pastTrips');
+        navigate('/pastTrips');
         return;
       })
       .catch((err) => {
