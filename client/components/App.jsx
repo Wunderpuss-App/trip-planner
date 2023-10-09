@@ -1,10 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Trip from './Trip.jsx';
+import Home from './Home.jsx';
 
 const App = () => {
-  const navigate = useNavigate();
-
-  return <Trip />;
+  return <Home />;
 };
 export default App;

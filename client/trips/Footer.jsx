@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-const Footer = () => {
+const Footer = (props) => {
+  const { deleteTrip, saveTrip, trip } = props;
+  const { _id, destination, weather } = trip;
+
   return (
     <div id='footer'>
-      <button className='footerBtn' formMethod='DELETE' type='submit'>
-        {' '}
-        DELETE
+      <button className='submit' onClick={(event) => deleteTrip(event, _id)}>
+        Delete Trip
       </button>
-      <button className='footerBtn' formMethod='PATCH' type='submit'>
-        {' '}
-        UPDATE
+      <button className='submit' onClick={(event) => saveTrip(event, trip)}>
+        Save Trip
       </button>
     </div>
   );

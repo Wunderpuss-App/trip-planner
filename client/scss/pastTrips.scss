@@ -1,0 +1,67 @@
+$primaryColor: #26a69a;
+$secondaryColor: #83c3f7;
+$lightPrimaryColor: lighten($primaryColor, 58%);
+$primaryBlack: rgb(28, 27, 27);
+$secondaryBlack: rgb(86, 85, 85);
+
+.pastTrip {
+  background-image: url(https://media.cntraveler.com/photos/62e2b452af14e65bfedc7cb6/16:9/w_2560%2Cc_limit/AirPlane_philip-myrtorp-iiqpxCg2GD4-unsplash.jpg);
+  background-size: 150%;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-color: $lightPrimaryColor;
+  height: 100%;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.allTrips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tripInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.trip {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #d2d8f6;
+  background-color: $secondaryColor;
+  padding: 20px;
+  border-radius: 5px;
+
+  .trip-header {
+    text-align: center;
+    margin-bottom: 20px;
+    h3 {
+      margin: 0px;
+    }
+  }
+
+  .line {
+    border: none;
+    border-top: 1px solid black;
+    margin: 10px 0;
+  }
+}
+
+button {
+  width: 100px;
+  font-size: 1em;
+  margin: 10px;
+  background-color: $lightPrimaryColor;
+  color: $primaryBlack;
+  border: 1px solid $secondaryBlack;
+  border-radius: 3px;
+}
