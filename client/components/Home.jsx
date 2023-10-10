@@ -29,6 +29,10 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log('data from fetch', data);
+        if ('err' in data) {
+          alert('Destination does not exist');
+          return;
+        }
         dispatch(updateTrip(data));
         navigate('/trip');
         return;
